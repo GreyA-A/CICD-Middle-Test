@@ -8,3 +8,9 @@ class TextAnalyzer:
         # Речення закінчуються на: ..., ., !, ?
         sentences = re.findall(r'\.{3}|[.!?]', text)
         return len(sentences)
+    def count_words(self, text):
+        # Розділювачі: пробіл, кома, двокрапка, крапка з комою
+        words = re.split(r'[ ,:;\n]+', text)
+        # Видаляємо порожні елементи (наприклад, якщо було два пробіли)
+        words = [w for w in words if w.strip()]
+        return len(words)
