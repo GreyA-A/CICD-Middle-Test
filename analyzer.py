@@ -6,7 +6,7 @@ class TextAnalyzer:
             return f.read()
     def count_sentences(self, text):
         # Речення закінчуються на: ..., ., !, ?
-        sentences = re.findall(r'\.{3}|[.!?]', text)
+        sentences = re.findall(r'\.{3}|[.!?]+', text)
         return len(sentences)
     def count_words(self, text):
         # Розділювачі: пробіл, кома, двокрапка, крапка з комою
