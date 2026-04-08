@@ -1,0 +1,176 @@
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git init
+Initialized empty Git repository in C:/Users/akuts/OneDrive/Desktop/KNU/CICD/CICD-Middle_Test/.git/
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> echo "__pycache__/
+>> .pytest_cache/
+>> venv/
+>> .env" > .gitignore
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add .gitignore
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Initial commit: add .gitignore"
+[master (root-commit) 08be092] Initial commit: add .gitignore
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> python -m venv venv
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> .\venv\Scripts\activate
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pip install pytest pytest-html                   
+Collecting pytest                                                                                                     
+  Downloading pytest-9.0.3-py3-none-any.whl.metadata (7.6 kB)
+Collecting pytest-html
+  Using cached pytest_html-4.2.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting colorama>=0.4 (from pytest)
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting iniconfig>=1.0.1 (from pytest)
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging>=22 (from pytest)
+  Using cached packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pluggy<2,>=1.5 (from pytest)
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pygments>=2.7.2 (from pytest)
+  Using cached pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting jinja2>=3 (from pytest-html)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting pytest-metadata>=2 (from pytest-html)
+  Using cached pytest_metadata-3.1.1-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=3->pytest-html)
+  Using cached markupsafe-3.0.3-cp313-cp313-win_amd64.whl.metadata (2.8 kB)
+Downloading pytest-9.0.3-py3-none-any.whl (375 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pytest_html-4.2.0-py3-none-any.whl (23 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.3-cp313-cp313-win_amd64.whl (15 kB)
+Using cached packaging-26.0-py3-none-any.whl (74 kB)
+Using cached pygments-2.20.0-py3-none-any.whl (1.2 MB)
+Using cached pytest_metadata-3.1.1-py3-none-any.whl (11 kB)
+Installing collected packages: pygments, pluggy, packaging, MarkupSafe, iniconfig, colorama, pytest, jinja2, pytest-metadata, pytest-html
+Successfully installed MarkupSafe-3.0.3 colorama-0.4.6 iniconfig-2.3.0 jinja2-3.1.6 packaging-26.0 pluggy-1.6.0 pygments-2.20.0 pytest-9.0.3 pytest-html-4.2.0 pytest-metadata-3.1.1
+
+[notice] A new release of pip is available: 25.2 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add analyzer.py
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: TextAnalyzer class and read_file method"
+[master 4cfdd48] Add: TextAnalyzer class and read_file method
+ 1 file changed, 6 insertions(+)
+ create mode 100644 analyzer.py
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add analyzer.py                              
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: count_sentences method"      
+[master 82d46d8] Add: count_sentences method
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add analyzer.py
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: count_words method"    
+[master 29a8282] Add: count_words method
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pytest --html=report.html --self-contained-html
+>>
+================================================ test session starts ================================================
+platform win32 -- Python 3.13.9, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test
+plugins: html-4.2.0, metadata-3.1.1
+collected 9 items                                                                                                    
+
+test_analyzer.py ...F.....                                                                                     [100%]
+
+===================================================== FAILURES ====================================================== 
+____________________________________ test_count_sentences[Wait... What?! Yes.-3] ____________________________________ 
+
+analyzer = <analyzer.TextAnalyzer object at 0x000001BADA573230>, text = 'Wait... What?! Yes.', expected_sentences = 3 
+
+    @pytest.mark.parametrize("text, expected_sentences", [
+        ("Hello world.", 1),
+        ("Hi! How are you? Fine...", 3),
+        ("No sentences here", 0),
+        ("Wait... What?! Yes.", 3)
+    ])
+    def test_count_sentences(analyzer, text, expected_sentences):
+>       assert analyzer.count_sentences(text) == expected_sentences
+E       AssertionError: assert 4 == 3
+E        +  where 4 = count_sentences('Wait... What?! Yes.')
+E        +    where count_sentences = <analyzer.TextAnalyzer object at 0x000001BADA573230>.count_sentences
+
+test_analyzer.py:26: AssertionError
+------- Generated html report: file:///C:/Users/akuts/OneDrive/Desktop/KNU/CICD/CICD-Middle_Test/report.html --------
+============================================== short test summary info ==============================================
+FAILED test_analyzer.py::test_count_sentences[Wait... What?! Yes.-3] - AssertionError: assert 4 == 3
+============================================ 1 failed, 8 passed in 0.19s ============================================
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pip freeze > requirements.txt
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add test_analyzer.py report.html requirements.txt
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: unit tests, html report and requirements"
+[master 18f2d88] Add: unit tests, html report and requirements
+ 3 files changed, 1134 insertions(+)
+ create mode 100644 report.html
+ create mode 100644 requirements.txt
+ create mode 100644 test_analyzer.py
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add analyzer.py
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Changed: count_sentences method (so it counts double sign as one sentence)"
+[master 2b7e7ac] Changed: count_sentences method (so it counts double sign as one sentence)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pytest --html=report_fixed.html --self-contained-html
+>> 
+===================================================================== test session starts =====================================================================
+platform win32 -- Python 3.13.9, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test
+plugins: html-4.2.0, metadata-3.1.1
+collected 9 items                                                                                                                                              
+
+test_analyzer.py .........                                                                                                                               [100%]
+
+------------------------- Generated html report: file:///C:/Users/akuts/OneDrive/Desktop/KNU/CICD/CICD-Middle_Test/report_fixed.html -------------------------- 
+====================================================================== 9 passed in 0.05s ====================================================================== 
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add report_fixed.html
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Fix: Ran a new pytest on a fixed analyzer"
+[master 80b80e3] Fix: Ran a new pytest on a fixed analyzer
+ 1 file changed, 1094 insertions(+)
+ create mode 100644 report_fixed.html
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pip install flake8
+Collecting flake8
+  Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+  Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8)
+  Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.5.0,>=3.4.0 (from flake8)
+  Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
+Successfully installed flake8-7.3.0 mccabe-0.7.0 pycodestyle-2.14.0 pyflakes-3.4.0                                                                              
+
+[notice] A new release of pip is available: 25.2 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pip freeze > requirements.txt
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add requirements.txt
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: More dependencies"
+[master 81c8b85] Add: More dependencies
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git add .github/workflows/ci.yml
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git commit -m "Add: GitHub Actions for tests and PEP8 check"
+[master 7cb7850] Add: GitHub Actions for tests and PEP8 check
+ 1 file changed, 25 insertions(+)
+ create mode 100644 .github/workflows/ci.yml
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> pytest --html=report.html --self-contained-html
+===================================================================== test session starts =====================================================================
+platform win32 -- Python 3.13.9, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test
+plugins: html-4.2.0, metadata-3.1.1
+collected 9 items                                                                                                                                               
+
+test_analyzer.py .........                                                                                                                               [100%]
+
+---------------------------- Generated html report: file:///C:/Users/akuts/OneDrive/Desktop/KNU/CICD/CICD-Middle_Test/report.html ----------------------------- 
+====================================================================== 9 passed in 0.04s ====================================================================== 
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git remote add origin https://github.com/GreyA-A/CICD-Middle-Test.git
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git branch -M main
+(venv) PS C:\Users\akuts\OneDrive\Desktop\KNU\CICD\CICD-Middle_Test> git push -u origin main
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (31/31), 12.27 KiB | 2.45 MiB/s, done.
+Total 31 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (10/10), done.
+To https://github.com/GreyA-A/CICD-Middle-Test.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
